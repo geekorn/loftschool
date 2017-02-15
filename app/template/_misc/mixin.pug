@@ -10,7 +10,7 @@ mixin nav(className, modifier, items)
 		ul(class=`${className}__list`)
 			each item in items
 				li(class=`${className}__item` + ( (modifier === 'inline') ? ` ${className}__item_inline` : '') )
-					a(class=`${className}__list` href=`${item.link}`)= item.title
+					a(class=`${className}__link` href=`${item.link}`)= item.title
 
 mixin social(items, modifier)
 	ul.social__list
