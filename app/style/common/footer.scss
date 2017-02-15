@@ -1,0 +1,11 @@
+.footer {
+  background-color: rgba($black, .7);
+  height: 150px;
+}
+.footer__top, .footer__bottom {
+  @extend %clearfix;
+}
+.footer__col {
+  width: 50%;
+  float: left;
+}

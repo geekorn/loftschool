@@ -1,0 +1,47 @@
+-
+   var menu = [
+      {
+         title: 'Обо мне',
+         link: 'about.html'
+      },
+      {
+         title: 'Мои работы',
+         link: 'portfolio.html'
+      },
+      {
+         title: 'Блог',
+         link: 'blog.html'
+      },{
+         title: 'Авторизация',
+         link: 'index.html'
+         }
+      ]
+-
+   var socials = [
+   {
+      title: 'vk',
+      link: 'https://vk.com/id170986'
+   },
+   {
+      title: 'github',
+      link: 'https://github.com/geekorn'
+   },
+   {
+      title: 'in',
+      link: ''
+   }
+   ]
+
+footer.footer
+   .footer__top
+      .footer__col
+         +nav('menu', 'inline', menu)
+      .footer__col
+         +social(socials, 'round')
+   .footer__bottom
+      .footer__col
+         .footer__text
+            p.
+               веб-разработчик из Новосибирска, и этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool.
+      .footer__col
+         +copy-right

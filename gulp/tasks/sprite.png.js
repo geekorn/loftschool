@@ -17,6 +17,7 @@ module.exports = function() {
 
     spriteData.img.pipe($.gulp.dest($.config.root + '/assets/img/sprite'));
     spriteData.css.pipe($.gulp.dest('./app/style'));
+    
     return spriteData;
   });
 };

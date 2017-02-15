@@ -1,0 +1,26 @@
+-
+   var socials = [
+   {
+   title: 'vk',
+   link: 'https://vk.com/id170986'
+   },
+   {
+   title: 'github',
+   link: 'https://github.com/geekorn'
+   },
+   {
+   title: 'in',
+   link: ''
+   }
+   ]
+
+section.header
+   .header__bg
+   .header__socials
+      +social(socials)
+   .header__menu
+      a(class="burger__link" href="#") меню
+   .header__user
+      +user('white')
+   .header__scroll-down
+      a(class="scroll-down__link" href="#")
