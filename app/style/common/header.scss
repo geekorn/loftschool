@@ -9,22 +9,50 @@
   background-image: url(../img/decor/background.jpg);
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: 50% 20%;
+  position: absolute;
 }
-
+.header__container {
+  padding-top: 30px;
+  @extend %clearfix;
+}
 .header__socials {
-  position: absolute;
-  top: 30px;
-  left: 30px;
+  @extend %left;
+  position: relative;
 }
-.header__menu {
-  position: absolute;
-  top: 30px;
-  right: 30px;
+.header__hamburger {
+  @extend %right;
+  position: relative;
 }
 .header__user {
-  position: absolute;
-  top: 155px;
-  left: 50%;
-  transform: translateX(-50%);
+  @include centered(x);
+  top: 25.5%;
+  width: 100%;
   color: #fff;
+  background-image: url(../img/decor/portfolio_header.png);
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+.header__blog-title {
+  @include centered(x);
+  top: 25.5%;
+  color: #fff;
+  text-align: center;
+}
+
+.scroll-link {
+  display: inline-block;
+  @include centered(x);
+  opacity: .5;
+  z-index: 1000;
+  &:hover {
+    opacity: 1;
+  }
+
+  &_down {
+    bottom: 13%;
+  }
+  &_up {
+    bottom: 70px;
+  }
 }

@@ -14,3 +14,28 @@
 %right {
   float: right;
 }
+
+@mixin inlineblock($value: top) {
+  display: inline-block;
+  vertical-align: $value;
+}
+
+@mixin centered($asix: 'both') {
+  position: absolute;
+
+  @if ($asix == 'both') {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  @if ($asix == 'x') {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  @if ($asix == 'y') {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}

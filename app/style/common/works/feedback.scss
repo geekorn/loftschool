@@ -1,0 +1,113 @@
+.feedback {
+  background-image: url(../img/decor/feedback_bg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: right 50%;
+  padding-bottom: 167px;
+  position: relative;
+}
+
+.feedback-title {
+  padding-bottom: 0;
+}
+
+.comments {
+  width: 820px;
+  margin: 0 auto;
+  margin-bottom: 70px;
+  font-size: 0;
+
+  * {
+    font-size: 16px;
+  }
+}
+
+.comments__item {
+  @include inlineblock(top);
+  width: 50%;
+  padding: 0 20px;
+}
+
+.comments__text {
+  position: relative;
+  padding-top: 60px;
+  margin-bottom: 25px;
+  background-image: url(../img/decor/quotes.png);
+  background-position: 0 0;
+  background-repeat: no-repeat;
+}
+.author__avatar {
+  @include inlineblock(middle);
+  width: 77px;
+  height: 77px;
+  border-radius: 50%;
+  overflow: hidden;
+  position: relative;
+  margin-right: 22px;
+}
+.author__pic {
+  max-height: 100%;
+  max-width: 100%;
+}
+
+.author__desc {
+  @include inlineblock(middle);
+  color: $green-light;
+}
+.author__name {
+  @include roboto(bold);
+}
+
+
+.feedback-form {
+  position: relative;
+  width: 380px;
+  margin: 0 auto;
+  border-radius: 10px;
+  overflow: hidden;
+  text-align: center;
+  padding-top: 25px;
+  background-color: #cecece;
+}
+
+.form__container {
+  padding: 0 20px;
+}
+.form__input {
+  width: 100%;
+  border-radius: 10px;
+  //height: 45px;
+  padding: 17px 19px;
+  outline: none;
+  border: none;
+  margin-bottom: 20px;
+
+  &_area {
+    height: 140px;
+    resize: none;
+  }
+}
+
+.form__buttons {
+  display: flex;
+  justify-content: space-between;
+
+}
+.form__btn {
+  //display: inline-block;
+  width: 50%;
+  padding: 15px 0;
+  text-decoration: none;
+  @include roboto(medium);
+  text-align: center;
+  color: #fff;
+  background-color: $green-light;
+  transition: .3s;
+
+  position: relative;
+  bottom: 0;
+
+  &:hover {
+    background-color: rgba($green-dark, .7);
+  }
+}

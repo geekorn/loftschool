@@ -1,0 +1,21 @@
+.blog {
+  position: relative;
+}
+.blog-container {
+  @extend %clearfix;
+  padding-top: 70px;
+}
+.sidebar {
+  width: 410px/1800px * 100%;
+  @extend %left;
+  position: static;
+}
+.articles {
+  width: 1310px/1800px * 100%;
+  @extend %right;
+}
+
+
+@import "blog/header";
+@import "blog/sidebar";
+@import "blog/articles";

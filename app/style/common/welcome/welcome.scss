@@ -13,7 +13,8 @@
   top: 20px;
   right: 20px;
 }
-.button-auth {
+
+.auth-button {
   display: inline-block;
   padding: 10px 30px;
   border: 1px solid #fff;
@@ -30,8 +31,8 @@
 }
 
 .welcome-wrapper {
-  width: 380px;
-  height: 385px;
+  width: 379px;
+  //height: 385px;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -39,14 +40,26 @@
   background-color: rgba(#fff, .7);
   border-radius: 10px;
   overflow: hidden;
-  padding: 30px 20px 0;
+  padding-top: 30px;
 }
-.welcome__user-info {
+
+.welcome__user {
   margin-bottom: 35px;
+  padding: 0 20px;
 }
+
 .user {
   text-align: center;
+  color: #fff;
 }
+
+.user_color_black {
+  color: $black;
+  .user__name {
+    font-size: 28px;
+  }
+}
+
 .user__avatar {
   width: 140px;
   height: 140px;
@@ -60,23 +73,18 @@
   max-height: 100%;
 }
 .user__name {
-  font-size: 28px;
+  font-size: 35px;
   @include roboto(medium);
 }
 
 .welcome__socials {
   text-align: center;
+  margin-bottom: 30px;
 }
 
-
-.welcome__menu {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-}
-.menu__item {
-  display: inline-block;
+.menu__list {
+  display: flex;
+  justify-content: space-between;
 }
 .menu__link {
   display: inline-block;
@@ -92,30 +100,41 @@
   }
 }
 
-
 .welcome__copyright {
   position: absolute;
   bottom: 30px;
   left: 50%;
   transform: translateX(-50%);
 }
+
 .copy-right {
-  text-align: center;
+  display: inline-block;
 }
+
+.copy-right_bold {
+  color: #fff;
+  @include roboto(regular);
+}
+
 .copy-right__item {
   position: relative;
   display: inline-block;
   margin-right: 10px;
-  color: #fff;
 
-  span:after {
+  &:after {
     content: '';
     display: block;
     width: 1px;
     position: absolute;
-    right: -6px;
+    right: -8px;
     top: 0;
     bottom: 0;
     background-color: #fff;
+  }
+  &:last-child {
+    margin-right: 0;
+    &:after {
+      display: none;
+    }
   }
 }

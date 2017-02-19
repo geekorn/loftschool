@@ -55,6 +55,16 @@
     font-style: normal;
 }
 
+@font-face {
+  font-family: 'bernier';
+  src: url('../fonts/bernierregular-regular-webfont.woff') format('woff'),
+  url('../fonts/bernierregular-regular-webfont.ttf') format('truetype'),
+  url('../fonts/bernierregular-regular-webfont.svg#bernier_regularregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
 @mixin roboto($style: regular) {
   @if $style == regular {
     font-family: 'robotoregular';

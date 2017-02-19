@@ -1,12 +1,12 @@
 -
    var menu = [
       {
-         title: 'Обо мне',
-         link: 'about.html'
+      title: 'Мои работы',
+      link: 'works.html'
       },
       {
-         title: 'Мои работы',
-         link: 'portfolio.html'
+      title: 'Обо мне',
+      link: 'about.html'
       },
       {
          title: 'Блог',
@@ -34,14 +34,10 @@
 
 footer.footer
    .footer__top
-      .footer__col
-         +nav('menu', 'inline', menu)
-      .footer__col
-         +social(socials, 'round')
+      +nav('footer-menu', 'inline', menu)
+      +social-round(socials, 'round')
    .footer__bottom
-      .footer__col
-         .footer__text
-            p.
-               веб-разработчик из Новосибирска, и этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool.
-      .footer__col
-         +copy-right
+      .footer__text
+         p.
+            Я веб-разработчик из Новосибирска, и этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool.
+      +copy-right

@@ -27,7 +27,7 @@ block variables
 			},
 			{
 				title: 'Мои работы',
-				link: 'portfolio.html'
+				link: 'works.html'
 			},
 			{
 				title: 'Блог',
@@ -36,12 +36,10 @@ block variables
 		]
 
 block content
-	.main-welcome
 		.welcome__background
-			.auth-button
-				a.button.button-auth(href="#") авторизоваться
-			.welcome-wrapper
-				include ../common/welcome/welcome
+		button.btn.auth-button(type="button") авторизоваться
+		.welcome-wrapper
+			include ../common/welcome/welcome
 
-			.welcome__copyright
-				+copy-right
+		.welcome__copyright
+			+copy-right('bold')
