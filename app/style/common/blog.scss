@@ -3,7 +3,7 @@
 }
 .blog-container {
   @extend %clearfix;
-  padding-top: 70px;
+  padding: 70px 70px 0;
 }
 .sidebar {
   width: 410px/1800px * 100%;
