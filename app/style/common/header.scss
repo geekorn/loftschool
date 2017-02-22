@@ -1,6 +1,7 @@
 .header {
   width: 100%;
   height: 100vh;
+  min-height: 550px;
   position: relative;
 }
 .header__bg {
@@ -15,6 +16,8 @@
 .header__container {
   padding-top: 30px;
   @extend %clearfix;
+
+
 }
 .header__socials {
   @extend %left;

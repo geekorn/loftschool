@@ -4,15 +4,22 @@
 .blog-container {
   @extend %clearfix;
   padding: 70px 70px 0;
+
+  @include laptop {
+
+  }
 }
 .sidebar {
   width: 410px/1800px * 100%;
   @extend %left;
-  position: static;
 }
 .articles {
   width: 1310px/1800px * 100%;
   @extend %right;
+
+  @include tablet {
+    width: 100%;
+  }
 }
 
 

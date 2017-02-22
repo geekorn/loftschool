@@ -8,10 +8,16 @@ body {
   height: 100%;
 }
 
+html {
+  @include tablet {
+    font-size: 14px;
+  }
+}
+
 body {
   @include roboto();
-  font-size: 16px;
-  line-height: 1.42;
+  //font-size: 16px;
+  //line-height: 1.42;
   color: $gray;
   margin: 0;
   padding: 0;
@@ -44,7 +50,8 @@ ul {
 }
 
 .container {
-  width: $container-width;
+  max-width: $container-width;
+  width: 95%;
   margin: 0 auto;
   @extend %clearfix;
 }
@@ -128,4 +135,11 @@ button {
   position: absolute;
   bottom: 100%;
   left: 0;
+
+  @include desktop {
+    height: 109px;
+  }
+  @include tablet {
+    height: 69px;
+  }
 }

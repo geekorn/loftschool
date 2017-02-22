@@ -1,15 +1,29 @@
 .skills {
   text-align: center;
   padding: 0 39px 40px;
+
+  @include tablet {
+    padding: 40px;
+  }
 }
 
 .skills__desc {
   text-align: left;
   margin-bottom: 45px;
+  @include tablet {
+    width: 472px;
+    margin: 0 auto;
+    margin-bottom: 45px;
+  }
 }
 
 .skills-group {
   text-align: left;
+
+  @include tablet {
+    text-align: center;
+    min-width: 340px;
+  }
 }
 .skills-group__item {
   margin-bottom: 25px;
@@ -32,14 +46,15 @@
 
 .skill {
   position: relative;
+  display: inline-block;
 }
 .skill__circle {
   width: 120px;
-  height: 122px;
+  height: 120px;
 }
 .circle {
   fill: transparent;
-  stroke-width: 18;
+  stroke-width: 17;
 }
 .circle-first {
   stroke: $gray;

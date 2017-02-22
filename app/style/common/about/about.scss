@@ -3,12 +3,28 @@
   position: relative;
   display: flex;
   align-items: stretch;
+
+  @include tablet {
+    display: block;
+  }
 }
 .about__column {
   @extend %left;
   position: relative;
   width: 50%;
   padding-top: 20px;
+
+  @include tablet {
+    width: 100%;
+    min-width: 320px;
+    float: none;
+    position: static;
+
+    .triangle {
+      width: 50%;
+    }
+  }
+
 }
 
 .about__column_left {
@@ -21,6 +37,12 @@
   background-color: #eeebdf;
   .triangle {
     fill: #eeebdf;
+
+    @include tablet {
+      fill: #efeee9;
+      right: 0;
+      left: 50%;
+    }
   }
 }
 
@@ -28,12 +50,14 @@
   @extend %left;
   margin-top: -30px;
   width: 46%;
+
+  @include desktop {
+    float: none;
+    width: 100%;
+  }
 }
 .main-title_about {
   padding: 40px 80px 20px;
-  //position: absolute;
-  //top: -35px;
-  //left: 1%;
   $padding: 30px;
   &:before {
     left: $padding;
@@ -43,20 +67,47 @@
     right: $padding;
     top: 70px;
   }
+  @include desktop {
+    margin-bottom: 30px;
+  }
 }
 .about {
   width: 54%;
   float: right;
   padding: 0 20px;
   text-align: center;
+  @include desktop {
+    width: 443px;
+    margin: 0 auto;
+    float: none;
+    padding: 0;
+    padding-bottom: 40px;
+  }
+
+  @include tablet {
+    width: 472px;
+    padding: 0;
+    padding-bottom: 40px;
+  }
+
+  @include phone {
+    width: 95%;
+    min-width: 340px;
+  }
 }
 
 .about__img {
   width: 100%;
+  max-width: 444px;
   height: 390px;
+  margin: 0 auto;
   margin-bottom: 40px;
   overflow: hidden;
   border: 1px solid #000;
+
+  @include phone {
+    width: 99%;
+  }
 }
 .about__avatar {
   max-width: 100%;
@@ -68,5 +119,13 @@
   padding-right: 40px;
   p {
     margin-bottom: 20px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  @include tablet {
+    padding: 0;
   }
 }
