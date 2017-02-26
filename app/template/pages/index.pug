@@ -6,40 +6,47 @@ block variables
 	- var title = 'WELCOME'
 	-
 		var socials = [
-			{
-				title: 'vk',
-				link: 'https://vk.com/id170986'
-			},
-			{
-				title: 'github',
-				link: 'https://github.com/geekorn'
-			},
-			{
-				title: 'in',
-				link: ''
-			}
+		{
+		title: 'vk',
+		link: 'https://vk.com/id170986'
+		},
+		{
+		title: 'github',
+		link: 'https://github.com/geekorn'
+		},
+		{
+		title: 'in',
+		link: ''
+		}
 		]
 	-
 		var menu = [
-			{
-				title: 'Обо мне',
-				link: 'about.html'
-			},
-			{
-				title: 'Мои работы',
-				link: 'works.html'
-			},
-			{
-				title: 'Блог',
-				link: 'blog.html'
-			}
+		{
+		title: 'Мои работы',
+		link: 'works.html'
+		},
+		{
+		title: 'Обо мне',
+		link: 'about.html'
+		},
+		{
+		title: 'Блог',
+		link: 'blog.html'
+		}
 		]
 
 block content
-		.welcome__background
+	.index-wrapper
+		.welcome__background.paralax
+			include ../common/welcome/paralax
 		button.btn.auth-button(type="button") авторизоваться
-		.welcome-wrapper
-			include ../common/welcome/welcome
+		.welcome-wrapper.flip-container
+			.flipper
+				include ../common/welcome/welcome
+				include ../common/welcome/login
 
 		.welcome__copyright
 			+copy-right('bold')
+
+block script
+	script(src="assets/js/index.js")

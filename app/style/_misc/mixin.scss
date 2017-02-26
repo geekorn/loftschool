@@ -50,16 +50,23 @@
     @content;
   }
 }
-
 @mixin tablet {
   @media (max-width: 768px) {
     @content;
   }
 }
-
+@mixin phone-hor-orientation {
+  @media (max-width: 550px) {
+    @content;
+  }
+}
 @mixin phone {
   @media (max-width: 480px) {
     @content;
   }
+}
+
+@function rem($pxsize,$rembase:16px) {
+  @return ($pxsize/$rembase) + 0rem
 }
 

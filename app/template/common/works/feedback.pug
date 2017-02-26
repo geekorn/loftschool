@@ -1,6 +1,14 @@
 section.feedback
+
+
+
+
+	.feedback__bg
+		img(src="assets/img/decor/feedback_bg.jpg" alt="" class="feedback__img")
+
 	.section__title
 		+main-title('что обо мне говорят', 'about', 'feedback')
+
 	ul.comments
 		li.comments__item
 			.comments__text
@@ -15,15 +23,16 @@ section.feedback
 		li.comments__item
 			.comments__text
 				p.
-					Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
+					Этот код выдержит любые испытания. Только пожалуйста, не загружается сайт на слишком старых браузерах!
 			.comments__author.author
 				.author__avatar
 					img.author__pic(src="assets/img/userfiles/avatar.jpg")
 				.author__desc
-					.author__name Ковальчук Дмитрий
-					.author__position основатель Loftschool
+					.author__name Владимир Сабанцев
+					.author__position преподаватель Loftschool
 
 	.feedback-form
+		.feedback-form__blur
 		.block-title Связаться со мной
 		form(action="" method="" class="form")
 			.form__container

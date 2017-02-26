@@ -2,6 +2,10 @@
   background-color: rgba($black, .7);
   position: relative;
   padding: 0 30px;
+
+  @include phone {
+    padding: 0 10px;
+  }
 }
 .footer__top, .footer__bottom {
   padding: 17px 0;
@@ -46,12 +50,18 @@
     &:last-child {
       margin-right: 0;
     }
+
+    @include phone {
+      margin-right: 13px;
+    }
   }
 
   @include tablet {
     margin-bottom: 20px;
   }
+
 }
+
 .footer-menu__link {
   text-decoration: none;
   @include roboto(medium);
@@ -60,6 +70,10 @@
 
   &:hover {
     color: $green-light;
+  }
+
+  @include phone {
+    font-size: 13px;
   }
 }
 

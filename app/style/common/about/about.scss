@@ -45,6 +45,13 @@
     }
   }
 }
+//.about-conteiner {
+//  @include tablet {
+//    width: 100%;
+//    padding: 0 10px;
+//  }
+//}
+
 
 .section__title_fl_left {
   @extend %left;
@@ -70,6 +77,14 @@
   @include desktop {
     margin-bottom: 30px;
   }
+
+  @include tablet {
+    padding-top: 30px;
+
+    &:before, &:after {
+      top: 52px;
+    }
+  }
 }
 .about {
   width: 54%;
@@ -84,6 +99,9 @@
     padding-bottom: 40px;
   }
 
+  @include laptop {
+    width: 95%;
+  }
   @include tablet {
     width: 472px;
     padding: 0;
@@ -92,18 +110,18 @@
 
   @include phone {
     width: 95%;
-    min-width: 340px;
+    min-width: 300px;
   }
 }
 
 .about__img {
   width: 100%;
   max-width: 444px;
-  height: 390px;
+  //height: 390px;
   margin: 0 auto;
   margin-bottom: 40px;
   overflow: hidden;
-  border: 1px solid #000;
+  //border: 1px solid #000;
 
   @include phone {
     width: 99%;

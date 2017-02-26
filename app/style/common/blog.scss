@@ -5,13 +5,17 @@
   @extend %clearfix;
   padding: 70px 70px 0;
 
-  @include laptop {
-
+  @include tablet {
+    padding: 50px 4%;
   }
 }
 .sidebar {
   width: 410px/1800px * 100%;
   @extend %left;
+
+  @include tablet {
+    display: none;
+  }
 }
 .articles {
   width: 1310px/1800px * 100%;
