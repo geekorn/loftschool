@@ -40,12 +40,15 @@ var blur = (function () {
   return {
     set: function () {
       var imgWidth = document.querySelector('.feedback__bg').offsetWidth,
+        wrapperCoords = wrapper.getBoundingClientRect(),
+        parentCoords = wrapper.parentNode.getBoundingClientRect(),
         posLeft = -wrapper.offsetLeft,
-        posTop = -wrapper.offsetTop,
+        posTop = - (parentCoords.bottom - wrapperCoords.bottom) / 2,
         blurCSS = form.style;
 
       blurCSS.backgroundSize = imgWidth + 'px' + ' ' + 'auto';
       blurCSS.backgroundPosition = posLeft + 'px ' + posTop + 'px';
+      console.log(posTop);
     }
   }
 })();
