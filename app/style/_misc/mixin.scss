@@ -39,3 +39,34 @@
     transform: translateY(-50%);
   }
 }
+
+@mixin desktop {
+  @media (max-width: 1280px) {
+    @content;
+  }
+}
+@mixin laptop {
+  @media (max-width: 992px) {
+    @content;
+  }
+}
+@mixin tablet {
+  @media (max-width: 768px) {
+    @content;
+  }
+}
+@mixin phone-hor-orientation {
+  @media (max-width: 550px) {
+    @content;
+  }
+}
+@mixin phone {
+  @media (max-width: 480px) {
+    @content;
+  }
+}
+
+@function rem($pxsize,$rembase:16px) {
+  @return ($pxsize/$rembase) + 0rem
+}
+

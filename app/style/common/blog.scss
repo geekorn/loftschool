@@ -4,15 +4,26 @@
 .blog-container {
   @extend %clearfix;
   padding: 70px 70px 0;
+
+  @include tablet {
+    padding: 50px 4%;
+  }
 }
 .sidebar {
   width: 410px/1800px * 100%;
   @extend %left;
-  position: static;
+
+  @include tablet {
+    display: none;
+  }
 }
 .articles {
   width: 1310px/1800px * 100%;
   @extend %right;
+
+  @include tablet {
+    width: 100%;
+  }
 }
 
 
