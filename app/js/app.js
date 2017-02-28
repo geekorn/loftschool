@@ -102,17 +102,22 @@ window.onload = function () {
 
 // BLUR EFFECT
   var blur = (function () {
-    var wrapper = document.querySelector('.feedback-form'),
-      form = document.querySelector('.feedback-form__blur');
+    var section = document.querySelector('.feedback'),
+      blurWrapper = document.querySelector('.feedback-form'),
+      blur = document.querySelector('.feedback-form__blur');
 
     return {
       set: function () {
         var imgWidth = document.querySelector('.feedback__bg').offsetWidth,
-          wrapperCoords = wrapper.getBoundingClientRect(),
-          parentCoords = wrapper.parentNode.getBoundingClientRect(),
-          posLeft = -wrapper.offsetLeft,
-          posTop = - (parentCoords.bottom - wrapperCoords.bottom) / 2,
-          blurCSS = form.style;
+          img = document.querySelector('.feedback__bg'),
+          imgCoords = img.getBoundingClientRect(),
+          sectionCoords = section.getBoundingClientRect(),
+          blurCoords = blurWrapper.getBoundingClientRect(),
+          posLeft = -blurWrapper.offsetLeft,
+          posTop = img.offsetTop - blurWrapper.offsetTop,
+          blurCSS = blur.style;
+
+        console.log(img.offsetTop, imgCoords.top, posTop)
 
         blurCSS.backgroundSize = imgWidth + 'px' + ' ' + 'auto';
         blurCSS.backgroundPosition = posLeft + 'px ' + posTop + 'px';
