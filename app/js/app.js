@@ -2,7 +2,7 @@
 
 window.onload = function () {
 
-
+// ПАРАЛАКС ЭФФФЕКТ В ШАПКЕ САЙТА
   var parallax = (function () {
     var bg = document.querySelector('.header__bg'),
       portfolio = document.querySelector('.header__portfolio'),
@@ -30,7 +30,7 @@ window.onload = function () {
   })();
 
 
-  //skill animation
+  // АНИМАЦИЯ ИКОНОК СКИЛОВ
   var skillsDraw = (function () {
     var skills = document.querySelectorAll('.skill'),
       circles = document.querySelectorAll('.circle-second'),
@@ -92,6 +92,7 @@ window.onload = function () {
   })();
 
 
+  // ВЫЗОВ ФУНКЦИЯ ПО СКРОЛЛУ СТРАНИЦЫ
   window.onscroll = function () {
     var wScroll = window.pageYOffset;
 
@@ -99,7 +100,7 @@ window.onload = function () {
     skillsDraw.grow(wScroll);
   };
 
-// blur effect
+// BLUR EFFECT
   var blur = (function () {
     var wrapper = document.querySelector('.feedback-form'),
       form = document.querySelector('.feedback-form__blur');
@@ -115,7 +116,6 @@ window.onload = function () {
 
         blurCSS.backgroundSize = imgWidth + 'px' + ' ' + 'auto';
         blurCSS.backgroundPosition = posLeft + 'px ' + posTop + 'px';
-        // console.log(posTop);
       }
     }
   })();
@@ -127,7 +127,7 @@ window.onload = function () {
   };
 
 
-  // скрыть/ показать навигацию
+  // СКРЫТЬ/ПОКАЗАТЬ ГЛАВНОЕ МЕНЮ
   var burgerMenu = document.querySelector('.hamburger-btn');
 
   burgerMenu.addEventListener('click', function () {
@@ -139,6 +139,7 @@ window.onload = function () {
 
   });
 
+  // СКРОЛЛ СТРАНИЦЫ ПО КЛИКУ НА ССЫЛКУ В ШАПКЕ
   var scrollDown = document.querySelector('.scroll-link_down');
 
   scrollDown.addEventListener('click', function (e) {
@@ -150,6 +151,7 @@ window.onload = function () {
 
   });
 
+  // СРОЛЛ СТРАНИЦЫ ВВЕРХ
   var scrollUp = document.querySelector('.scroll-link_up');
 
   scrollUp.addEventListener('click', function (e) {
@@ -157,9 +159,6 @@ window.onload = function () {
 
     $('body,html').animate({scrollTop: 0}, 1200);
   });
-
-
-
 
 
 };
