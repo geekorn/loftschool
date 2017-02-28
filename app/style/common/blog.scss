@@ -4,6 +4,7 @@
 .blog-container {
   @extend %clearfix;
   padding: 70px 70px 0;
+  position: relative;
 
   @include tablet {
     padding: 50px 4%;
@@ -14,7 +15,28 @@
   @extend %left;
 
   @include tablet {
-    display: none;
+    position: absolute;
+    right: 100%;
+    top: 0;
+    bottom: 0;
+
+    &:after {
+      content: '';
+      display: block;
+      width: 60px;
+      height: 60px;
+      background-color: $green-light;
+      box-shadow: 0 0 3px 3px rgba(#000, .2);
+      border-radius: 50%;
+      position: absolute;
+      right: -15px;
+    }
+  }
+  @include phone {
+    width: 300px;
+    &:after {
+      right: -9px;
+    }
   }
 }
 .articles {

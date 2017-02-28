@@ -71,20 +71,6 @@
   @include centered();
 }
 
-hamburger__btn {
-
-}
-.hamburger__icon {
-  fill: #fff;
-  width: 40px;
-  height: 35px;
-
-  @include phone {
-    width: 25px;
-    height: 22px;
-  }
-}
-
 .contacts__icon {
   fill: $green-light;
   width: 24px;

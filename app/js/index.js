@@ -24,6 +24,21 @@ var btn = document.querySelector('.auth-button'),
 btn.onclick = flip.auth;
 returnBtn.onclick = flip.main;
 
+// document.body.addEventListener('click', function (e) {
+//   var target = e.target,
+//     auth = document.querySelector('.auth');
+//
+//   while (target != this) {
+//
+//     if (target !== 'auth') {
+//       flip.main();
+//       return;
+//     }
+//
+//     target = target.parentNode;
+//   }
+// });
+
 //index paralax
 var paralaxContainer = document.querySelector('.paralax'),
   layers = paralaxContainer.children;
@@ -37,7 +52,7 @@ window.addEventListener('mousemove', function (e) {
 
   [].slice.call(layers).forEach(function (layer, i) {
     var layerStyle = layer.style,
-      divider = i / 100,
+      divider = i / 40,
       bottomPosition = (window.innerHeight / 2) * divider,
       horizontalPosition = (window.innerWidth / 2) * divider,
       positionX = initialX * divider,

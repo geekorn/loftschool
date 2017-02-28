@@ -47,6 +47,9 @@
 }
 
 .skills-list {
+  display: flex;
+  flex-wrap: wrap;
+
   @include tablet {
     display: flex;
     justify-content: space-around;
@@ -57,12 +60,13 @@
   }
 }
 .skills-list__item {
-  display: inline-block;
-  margin-right: 35px;
+  //display: inline-block;
+  //margin-right: 35px;
+  flex: 0 0 146px;
 
-  &:last-child {
-    margin-right: 0;
-  }
+  //&:last-child {
+  //  margin-right: 0;
+  //}
 
   @include tablet {
     //display: inline-block;
@@ -93,10 +97,10 @@
 }
 .circle {
   fill: transparent;
-  stroke-width: 17;
+  stroke-width: 15;
 }
 .circle-first {
-  stroke: $gray;
+  stroke: #deddd6;
 }
 .circle-second {
   stroke: $green-light;

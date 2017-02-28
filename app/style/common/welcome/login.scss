@@ -50,10 +50,10 @@ label {
   ~ .checkbox__label {
     &:before {
       background-color: $green-light;
-      background-image: url(../img/sprite/sprite.svg#check);
+      background-image: url(../img/decor/check.png);
       background-position: center center;
       background-repeat: no-repeat;
-      background-size: contain;
+      background-size: 12px 9px ;
     }
   }
 }
