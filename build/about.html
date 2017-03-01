@@ -11,7 +11,8 @@
     <link rel="shortcut icon" href="assets/img/favicon.png" type="image/png">
     <link rel="stylesheet" href="assets/css/foundation.css">
     <link rel="stylesheet" href="assets/css/main.css">
-    <script src="assets/js/foundation.js" defer></script><!--[if lt IE 9]>
+    <script src="assets/js/foundation.js" defer></script>
+    <script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB7BpAGQ0oStw_u3qaicBAy617Fu9062q0&amp;callback=initMap"></script><!--[if lt IE 9]>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"></script><![endif]-->
   </head>
   <body>
@@ -203,7 +204,9 @@
         </div>
       </section>
       <section class="l-contacts">
-        <div class="map" id="map"><img src="assets/img/userfiles/map.jpg"></div>
+        <div class="map" id="map">
+          <!--img(src="assets/img/userfiles/map.jpg")-->
+        </div>
         <div class="contacts">
           <div class="contacts__title block-title">контакты</div>
           <ul class="contacts__list">
@@ -222,11 +225,11 @@
                   <use xlink:href="assets/img/sprite/sprite.svg#phone"></use>
                 </svg>
                 <div class="contacts__text">8-999-999-9999</div></a></li>
-            <li class="contacts__item"><a class="contacts__link" href="#" target="_blank">
+            <li class="contacts__item"><a class="contacts__link" href="https://yandex.ru/maps/-/CZxW4Tzy" target="_blank">
                 <svg class="contacts__icon">
                   <use xlink:href="assets/img/sprite/sprite.svg#map_marker"></use>
                 </svg>
-                <div class="contacts__text">Москва, улю Берзарина</div></a></li>
+                <div class="contacts__text">Москва, ул. Берзарина</div></a></li>
           </ul>
         </div>
       </section>
