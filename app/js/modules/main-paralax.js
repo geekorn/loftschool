@@ -39,7 +39,7 @@ var MainParalax = function () {
     init: _show
   };
 
-});
+};
 
 
 
