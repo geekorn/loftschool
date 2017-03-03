@@ -41,6 +41,4 @@ var MainParalax = (function () {
 
 })();
 
-
-
-// window.mainParalax = MainParalax;
+window.mainParalax = MainParalax;
