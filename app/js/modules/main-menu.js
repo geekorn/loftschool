@@ -1,4 +1,4 @@
-var menu = (function () {
+var Menu = (function () {
   var menu = document.querySelector('.main-navigation'),
     burgerMenu = document.querySelector('.hamburger-btn');
 
@@ -11,3 +11,5 @@ var menu = (function () {
     }
   }
 })();
+
+window.menu = Menu;

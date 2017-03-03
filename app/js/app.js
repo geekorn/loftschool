@@ -1,5 +1,6 @@
+window.onload = function () {
 
-// window.onload = function () {
+  console.log('app is ready');
 
   //MAIN PARALAX
   var paralax = document.querySelector('.paralax');
@@ -7,8 +8,8 @@
   if (paralax !== null) {
     mainParalax.init();
   }
-
-  console.log(paralax);
+  //
+  // console.log(paralax);
 
 
   //FLIP CARD
@@ -17,24 +18,24 @@
 
   if (authBtn !== null) {
     authBtn.addEventListener('click', function () {
-      flip.auth();
+      Flip.auth();
     });
   }
 
   if (welcomeBtn !== null) {
     welcomeBtn.addEventListener('click', function () {
-      flip.welcome();
+      Flip.welcome();
     });
   }
 
   //BURGERMENU
-var burgerMenu = document.querySelector('.hamburger-btn');
+  var burgerMenu = document.querySelector('.hamburger-btn');
 
-if (burgerMenu !== null) {
-  burgerMenu.addEventListener('click', function () {
-    menu.toggle();
-  });
-}
+  if (burgerMenu !== null) {
+    burgerMenu.addEventListener('click', function () {
+      menu.toggle();
+    });
+  }
 
 
   //BLUR
@@ -48,7 +49,9 @@ if (burgerMenu !== null) {
 
 
   }
-  blur.set();
+  // blur.set();
+
+
   //HEADER PARALAX & SKILLS
 
   // ВЫЗОВ ФУНКЦИЯ ПО СКРОЛЛУ СТРАНИЦЫ
@@ -56,10 +59,10 @@ if (burgerMenu !== null) {
     var wScroll = window.pageYOffset;
 
     console.log(wScroll);
-    headerParallax.init(wScroll);
+    HeaderParallax.init(wScroll);
 
-    skillsDraw.grow(wScroll);
+    // Skills.grow(wScroll);
   };
 
 
-// };
+};

@@ -1,5 +1,5 @@
 // АНИМАЦИЯ ИКОНОК СКИЛОВ
-var skillsDraw = (function () {
+var Skills = (function () {
   var skills = document.querySelectorAll('.skill'),
     circles = document.querySelectorAll('.circle-second'),
     windowHeight = window.innerHeight;
@@ -58,3 +58,5 @@ var skillsDraw = (function () {
   }
 
 })();
+
+window.Skills = Skills;

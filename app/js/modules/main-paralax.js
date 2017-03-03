@@ -1,6 +1,5 @@
 //index paralax
-
-var mainParalax = (function () {
+var MainParalax = function () {
 
   var paralaxContainer = document.querySelector('.paralax'),
     layers = paralaxContainer.children;
@@ -36,9 +35,12 @@ var mainParalax = (function () {
     //для планшетов и телефонов подставить просто картинку, а не грузить весь паралакс
   };
 
-
   return {
     init: _show
   };
 
-})();
+});
+
+
+
+// window.mainParalax = MainParalax;

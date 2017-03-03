@@ -1,5 +1,5 @@
 // BLUR EFFECT
-var blur = (function () {
+var Blur = (function () {
   var section = document.querySelector('.feedback'),
     blurWrapper = document.querySelector('.feedback-form'),
     blur = document.querySelector('.feedback-form__blur');
@@ -20,3 +20,5 @@ var blur = (function () {
     }
   }
 })();
+
+window.blur = Blur;

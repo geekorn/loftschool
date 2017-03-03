@@ -1,5 +1,5 @@
 // index flip
-var flip = (function () {
+var Flip = (function () {
   var btn = document.querySelector('.auth-button'),
     flipper = document.querySelector('.flipper');
 
@@ -19,3 +19,5 @@ var flip = (function () {
   }
 
 })();
+
+window.blur = Blur;

@@ -1,5 +1,5 @@
 // ПАРАЛАКС ЭФФФЕКТ В ШАПКЕ САЙТА
-var headerParallax = (function () {
+var HeaderParallax = (function () {
   var bg = document.querySelector('.header__bg'),
     portfolio = document.querySelector('.header__portfolio'),
     user = document.querySelector('.header__user');
@@ -26,3 +26,5 @@ var headerParallax = (function () {
   }
 
 })();
+
+window.HeaderParallax = HeaderParallax;
