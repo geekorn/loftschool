@@ -1,6 +1,6 @@
 'use strict';
 
 module.exports = [
-  './app/js/app.js',
-  './app/js/*.js'
+  './app/js/modules/*.js',
+  './app/js/app.js'
 ];
