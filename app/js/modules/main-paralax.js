@@ -1,5 +1,5 @@
 //index paralax
-var MainParalax = function () {
+var MainParalax = (function () {
 
   var paralaxContainer = document.querySelector('.paralax'),
     layers = paralaxContainer.children;
@@ -39,7 +39,7 @@ var MainParalax = function () {
     init: _show
   };
 
-};
+})();
 
 
 
