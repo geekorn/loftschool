@@ -58,5 +58,3 @@ var Skills = (function () {
   }
 
 })();
-
-window.Skills = Skills;

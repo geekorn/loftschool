@@ -1,10 +1,11 @@
 //index paralax
 var MainParalax = (function () {
 
-  var paralaxContainer = document.querySelector('.paralax'),
-    layers = paralaxContainer.children;
-
   var _show = function () {
+
+    var paralaxContainer = document.querySelector('#paralax'),
+      layers = paralaxContainer.children;
+
     window.addEventListener('mousemove', function (e) {
 
       var pageX = e.pageX,
@@ -40,5 +41,3 @@ var MainParalax = (function () {
   };
 
 })();
-
-window.mainParalax = MainParalax;

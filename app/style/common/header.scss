@@ -32,6 +32,10 @@
   &:last-child {
     margin-bottom: 0;
   }
+
+  @include phone {
+    margin-bottom: 45px;
+  }
 }
 .main-menu__link {
   font-size: 63px;
@@ -62,7 +66,14 @@
   &:hover {
     &:before, &:after {
     opacity: 1;
+    }
   }
+
+  @include tablet {
+    font-size: 49px;
+  }
+  @include phone {
+    font-size: 35px;
   }
 }
 

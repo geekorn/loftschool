@@ -11,5 +11,3 @@ var Menu = (function () {
     }
   }
 })();
-
-window.menu = Menu;

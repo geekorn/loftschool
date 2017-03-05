@@ -5,40 +5,17 @@
   @extend %clearfix;
   padding: 70px 70px 0;
   position: relative;
+  transition: .5s;
 
-  @include tablet {
+  @include laptop {
     padding: 50px 4%;
   }
-}
-.sidebar {
-  width: 410px/1800px * 100%;
-  @extend %left;
 
-  @include tablet {
-    position: absolute;
-    right: 100%;
-    top: 0;
-    bottom: 0;
-
-    &:after {
-      content: '';
-      display: block;
-      width: 60px;
-      height: 60px;
-      background-color: $green-light;
-      box-shadow: 0 0 3px 3px rgba(#000, .2);
-      border-radius: 50%;
-      position: absolute;
-      right: -15px;
-    }
-  }
-  @include phone {
-    width: 300px;
-    &:after {
-      right: -9px;
-    }
+  &_shift_right {
+    transform: translateX(250px);
   }
 }
+
 .articles {
   width: 1310px/1800px * 100%;
   @extend %right;

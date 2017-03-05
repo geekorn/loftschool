@@ -34,9 +34,12 @@ section.feedback
 			.block-title Связаться со мной
 			form(action="" method="" class="form")
 				.form__container
-					input.form-input(type="text" placeholder="Имя")
-					input.form-input(type="email" placeholder="Email")
-					textarea.form-input.form-input_area(placeholder="Ваше сообщение")
+					.input-group
+						input.form-input(type="text" placeholder="Имя")
+					.input-group
+						input.form-input(type="email" placeholder="Email")
+					.input-group
+						textarea.form-input.form-input_area(placeholder="Cообщение")
 				.form__buttons
 					button.form__btn(type="submit") Отправить
 					button.form__btn(type="reset") Отчистить

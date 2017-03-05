@@ -19,5 +19,3 @@ var Flip = (function () {
   }
 
 })();
-
-window.blur = Blur;

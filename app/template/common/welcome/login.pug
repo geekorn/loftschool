@@ -2,18 +2,21 @@
 	.auth-title
 		.block-title авторизуйтесь
 	.auth__form
-		form(action="" method="" class="auth-form")
+		form(action="" method="" id="auth-form")
 			.form__container
-				.auth-form__input.input-group
+				.input-group.input-group_iconed
+					input.form-input(type="text" placeholder="Логин")
 					.input-group__icon-field
 						svg.input-group__icon
 							use(xlink:href='assets/img/sprite/sprite.svg#login')
-					input.form-input(type="text" placeholder="Логин")
-				.auth-form__input.input-group
+				.input-group.input-group_iconed
+					input.form-input(type="password" placeholder="Пароль")
 					.input-group__icon-field
 						svg.input-group__icon
 							use(xlink:href='assets/img/sprite/sprite.svg#password')
-					input.form-input(type="password" placeholder="Пароль")
+					.input-error-msg.
+						Вы не ввели пароль
+
 				.auth-form__checkbox
 					label.checkbox
 						input.checkbox__fake(type="checkbox")
@@ -22,11 +25,11 @@
 					.radio-group__title Вы точно человек?
 					.radio-group__inputs
 						label.radio-btn
-							input.radio-btn__fake(type="radio" name="robot")
+							input.radio-btn__fake(type="radio" name="robot" value="yes")
 							.radio-btn__label Да
 						label.radio-btn
-							input.radio-btn__fake(type="radio" name="robot")
+							input.radio-btn__fake(type="radio" name="robot" value='no')
 							.radio-btn__label Не уверен
 			.auth-form__buttons.form__buttons
 				button.form__btn.btn-return(type="button") На главную
-				button.form__btn(type="button") Войти
+				button.form__btn(type="submit") Войти

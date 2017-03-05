@@ -20,5 +20,3 @@ var Blur = (function () {
     }
   }
 })();
-
-window.blur = Blur;

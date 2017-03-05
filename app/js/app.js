@@ -3,10 +3,10 @@ window.onload = function () {
   console.log('app is ready');
 
   //MAIN PARALAX
-  var paralax = document.querySelector('.paralax');
+  var paralax = document.querySelector('#paralax');
 
   if (paralax !== null) {
-    mainParalax.init();
+    MainParalax.init();
   }
   //
   // console.log(paralax);
@@ -33,7 +33,7 @@ window.onload = function () {
 
   if (burgerMenu !== null) {
     burgerMenu.addEventListener('click', function () {
-      menu.toggle();
+      Menu.toggle();
     });
   }
 
@@ -42,27 +42,62 @@ window.onload = function () {
   var blurForm = document.querySelector('.feedback-form__blur');
 
   if (blurForm !== null) {
-    blur.set();
+    Blur.set();
     window.onresize = function () {
-      blur.set();
+      Blur.set();
     };
-
-
   }
-  // blur.set();
 
 
   //HEADER PARALAX & SKILLS
-
+  var bg = document.querySelector('.header__bg'),
+    skills = document.querySelectorAll('.skill');
   // ВЫЗОВ ФУНКЦИЯ ПО СКРОЛЛУ СТРАНИЦЫ
   window.onscroll = function () {
+
     var wScroll = window.pageYOffset;
 
-    console.log(wScroll);
-    HeaderParallax.init(wScroll);
+    if (bg !== null) {
+      HeaderParallax.init(wScroll);
+    }
 
-    // Skills.grow(wScroll);
+    if (skills !== null) {
+      Skills.grow();
+    }
+
   };
+
+  var sideMenu = document.querySelector('.sidemenu-btn');
+
+  if (sideMenu !== null) {
+    sideMenu.onclick = function () {
+      BlogMenu.toggle();
+    }
+  }
+
+  var form = document.querySelector('form');
+
+  if (form !== null) {
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      var valid = Validation.init(form);
+
+      console.log(valid);
+    })
+  }
+
+
+  var scrollLinkDown = document.querySelector('.scroll-link_down');
+
+  if (scrollLinkDown !== null) {
+    scrollLinkDown.addEventListener('click', function (e) {
+      e.preventDefault();
+
+      ScrollPage.down(this);
+
+    })
+  }
 
 
 };
