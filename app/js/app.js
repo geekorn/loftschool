@@ -53,7 +53,9 @@ window.onload = function () {
 
   //HEADER PARALAX & SKILLS
   var bg = document.querySelector('.header__bg'),
-    skills = document.querySelectorAll('.skill');
+    skills = document.querySelectorAll('.skill'),
+    blogWrapper = document.querySelector('.blog-container');
+
   // ВЫЗОВ ФУНКЦИЯ ПО СКРОЛЛУ СТРАНИЦЫ
   window.onscroll = function () {
 
@@ -65,6 +67,11 @@ window.onload = function () {
 
     if (skills !== null) {
       Skills.grow();
+    }
+
+    if (blogWrapper !== null) {
+      BlogMenu.init();
+      BlogMenu.initActive();
     }
 
   };
