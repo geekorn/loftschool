@@ -20,7 +20,7 @@
       <div class="preloader">
         <div class="pleloader__content">
           <div class="preloader__animation"></div>
-          <div class="preloader__text"></div>
+          <div class="preloader__percent">0%</div>
         </div>
       </div>
       <div class="index-wrapper">
@@ -93,10 +93,6 @@
                           <use xlink:href="assets/img/sprite/sprite.svg#password"></use>
                         </svg>
                       </div>
-                      <div class="input-error-msg">
-                        Вы не ввели пароль
-                        
-                      </div>
                     </div>
                     <div class="auth-form__checkbox">
                       <label class="checkbox">
@@ -116,6 +112,11 @@
                           <div class="radio-btn__label">Не уверен</div>
                         </label>
                       </div>
+                    </div>
+                    <div class="input-error-msg"></div>
+                    <div class="input-error-captcha">
+                      <div class="input-error-captcha__close"></div>
+                      <div class="input-error-captcha__text">Роботам тут не место</div>
                     </div>
                   </div>
                   <div class="auth-form__buttons form__buttons">

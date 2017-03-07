@@ -6,4 +6,53 @@
   text-align: center;
 }
 
+.input-error-captcha {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  border: 1px solid #000;
+  border-radius: 10px;
+  background-color: #cecece;
+}
+
+.input-error-captcha__text {
+  padding: 40px;
+}
+.input-error-captcha__close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translate(50%, -50%);
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  background-color: $black;
+  //background-image: url(../img/decor/);
+  cursor: pointer;
+
+  &:after, &:before {
+    content: '';
+    display: block;
+    width: 7px;
+    height: 2px;
+    background-color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    //transform: translate(-50%, -50%);
+    transform-origin: center;
+  }
+  &:before {
+    transform: translate(-50%, -50%) rotate(45deg);
+  }
+  &:after {
+    transform: translate(-50%, -50%) rotate(-45deg);
+  }
+
+}
+
 

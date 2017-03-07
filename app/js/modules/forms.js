@@ -1,84 +1,61 @@
 var Validation = (function () {
+  var errorField = document.querySelector('.input-error-msg'),
+    captchaError = document.querySelector('.input-error-captcha');
+
   var _init = function (form) {
-    // console.log('validation init');
+    var elems = form.elements;
 
-    var inputs = document.querySelectorAll('input');
-
-    // console.log(inputs);
-    return _validate(inputs) ? true : false;
+    console.log(elems);
+    return _validate(elems) ? true : false;
   };
 
-  function _validate (inputs) {
-    var elems = Array.prototype.slice.call(inputs);
-    var message;
-    for (var i = 0; i < elems.length; i++) {
-      var elem = elems[i];
+  function _validate(inputs) {
+
+    for (var i = 0; i < inputs.length; i++) {
+      if (inputs[i].tagName === 'BUTTON') continue;
+
+      var elem = inputs[i];
+
+      if (elem.value == '') {
+        console.log(elem);
+        return _showError(elem)
+      }
 
       if (elem.type === 'checkbox' || elem.type === 'radio') {
-        // var checkbox = elem.type === 'checkbox',
-        //   radio = elem.type === 'radio';
 
         if (elem.checked && elem.value === 'yes') {
           return true;
         }
         if (!elem.checked) {
-          return _showErrorCaptcha('роботам тут не место');
+          captchaError.style.display = 'block';
         }
-      }
-
-      if (elem.value === '') {
-         return _showError(elem)
       }
     }
 
+    return true;
+
   };
 
-  function _showError (elem) {
+  function _showError(elem) {
     var text = elem.getAttribute('placeholder').toLowerCase();
+    var position = elem.parentNode.offsetTop + elem.parentNode.offsetHeight;
+
+    elem.parentNode.classList.add('input-group_error');
+    errorField.style.display = 'block';
+    errorField.innerText = 'вы не ввели ' + text;
+    errorField.style.top = position + 'px';
     console.log('вы не ввели ' + text);
   }
 
-  function _showErrorCaptcha (msg) {
-    console.log(msg)
+  function _clearError(elem) {
+    console.log(elem);
+    elem.parentNode.classList.remove('input-group_error');
+    errorField.style.display = 'none';
   }
+
 
   return {
-    init: _init
+    init: _init,
+    clear: _clearError
   }
 })();
-
-
-
-// switch (elem.type) {
-//   case 'checkbox':
-//     if (!elem.checked) {
-//       message = 'роботам тут не место';
-//       // _showError(message, elem);
-//       break;
-//     }
-//   case 'radio':
-//     if (elem.checked && elem.value === 'yes') {
-//       return true;
-//       break;
-//     }
-//     else {
-//       message = 'роботам тут не место';
-//       // _showError(message, elem);
-//       break;
-//     }
-//   case 'text':
-//     if (elem.value == '') {
-//       message = 'введите логин';
-//       // _showError(message, elem);
-//       break;
-//     }
-//   case 'password':
-//     if (elem.value == '') {
-//       message = 'введите пароль';
-//       // _showError(message, elem);
-//       break;
-//     }
-
-// if (message !== undefined) {
-//   return _showError(message, elem);
-// }

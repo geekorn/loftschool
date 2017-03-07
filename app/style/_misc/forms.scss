@@ -4,20 +4,29 @@
   overflow: hidden;
   border-radius: 10px;
   display: flex;
+
+  &_error {
+    .form-input {
+      border: 1px solid red;
+    }
+    .input-group__icon-field {
+      .input-group__icon {
+        fill: red;
+      }
+    }
+  }
+
+  &_success {
+    .form-input {
+      border: 1px solid $green-light;
+    }
+  }
 }
 
 .input-group_iconed {
   flex-direction: row-reverse;
   .form-input {
     border-radius: 0 10px 10px 0;
-
-    &:focus {
-      ~ .input-group__icon-field {
-        .input-group__icon {
-          fill: $green-light;
-        }
-      }
-    }
   }
 }
 
@@ -178,13 +187,14 @@ label {
 }
 
 .input-error-msg {
+  display: none;
   position: absolute;
-  top: 100%;
   left: 50%;
   transform: translateX(-50%);
-  display: block;
   padding: 10px;
   background-color: red;
   color: #fff;
   border-radius: 5px;
+  z-index: 10;
 }
+

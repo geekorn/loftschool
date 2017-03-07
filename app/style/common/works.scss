@@ -5,7 +5,7 @@
 .portfolio__wrapper {
   @extend %clearfix;
   height: 100vh;
-  min-height: 650px;
+  min-height: 550px;
 
   @include tablet {
     height: auto;
@@ -32,7 +32,20 @@
     float: none;
     width: 100%;
   }
+
+  &_left {
+    @include tablet {
+      height: 80%;
+    }
+  }
+  &_right {
+    @include tablet {
+      height: 20%;
+    }
+  }
 }
+
+
 
 @import "works/portfolio";
 @import "works/feedback";

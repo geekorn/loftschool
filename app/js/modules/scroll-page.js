@@ -1,6 +1,5 @@
 var ScrollPage = (function () {
 
-
   return {
     down: function (elem) {
       var section = elem.parentNode.nextSibling.nextSibling,

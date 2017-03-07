@@ -1,6 +1,8 @@
-window.onload = function () {
+var preload = document.querySelector('.preloader');
 
-  console.log('app is ready');
+if (preload !== null) Preloader.init();
+
+window.onload = function () {
 
   //MAIN PARALAX
   var paralax = document.querySelector('#paralax');
@@ -78,6 +80,25 @@ window.onload = function () {
   var form = document.querySelector('form');
 
   if (form !== null) {
+    //очистка ошибки
+    var inputs = form.elements;
+    var closeError = document.querySelector('.input-error-captcha__close');
+
+    for (var i = 0; i < inputs.length; i++) {
+      inputs[i].onfocus = function() {
+        if (this.parentNode.classList.contains('input-group_error')) {
+          Validation.clear(this);
+        }
+      }
+    }
+
+    if (closeError !== null) {
+      closeError.onclick = function() {
+        closeError.parentNode.style.display = 'none';
+      };
+    }
+
+
     form.addEventListener('submit', function (e) {
       e.preventDefault();
 
@@ -88,15 +109,34 @@ window.onload = function () {
   }
 
 
+  //SCROLL PAGE
   var scrollLinkDown = document.querySelector('.scroll-link_down');
+  var scrollLinkUp = document.querySelector('.scroll-link_up');
 
   if (scrollLinkDown !== null) {
     scrollLinkDown.addEventListener('click', function (e) {
       e.preventDefault();
 
       ScrollPage.down(this);
-
     })
+  }
+  if (scrollLinkUp !== null) {
+    scrollLinkUp.addEventListener('click', function (e) {
+      e.preventDefault();
+
+      ScrollPage.up(this);
+    })
+  }
+
+  //SLIDER
+  var slider = document.querySelector('.work__slider');
+
+  if (slider !== null) {
+    (function () {
+      // Slider.init();
+      Slider.init();
+      Slider.move();
+    })();
   }
 
 

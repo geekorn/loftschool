@@ -72,10 +72,10 @@
           <div class="main-title main-title_undefined" style="background-image: url(assets/img/decor/works_header.png);">Мои работы</div>
         </div>
         <div class="portfolio__wrapper">
-          <div class="column column_left portfolio__column">
-            <div class="work__slider">
+          <div class="column column_left portfolio__column portfolio__column_left">
+            <div class="work">
               <div class="work__preview"><img class="work__pic" src="assets/img/userfiles/portfolio.png"></div>
-              <div class="work">
+              <div class="work__desc">
                 <div class="work__title block-title">Сайт школы онлайн</br>образования</div>
                 <div class="work__technology">html, css, javascript</div><a class="work__link" href="#">
                   <svg class="work__icon">
@@ -84,16 +84,28 @@
               </div>
             </div>
           </div>
-          <div class="column column_right portfolio__column">
-            <div class="work__toggle">
+          <div class="column column_right portfolio__column portfolio__column_right">
+            <div class="work__slider work-slider">
               <div class="work__prev toggle column column_left"><a class="toggle__link toggle__link_prev" href="#">
                   <svg class="toggle__icon">
                     <use xlink:href="assets/img/sprite/sprite.svg#portf_arrow_down"></use>
-                  </svg></a><img class="toggle__pic" src="assets/img/userfiles/portfolio.png"></div>
+                  </svg></a>
+                <ul class="work-slider__list work-slider__list_prev">
+                  <li class="work-slider__item work-slider__item_active" data-title="Сайт №1" data-technology="html, css, javascript" data-link="http://loftschool.ru"><img class="work-slider__img" src="assets/img/userfiles/portfolio1.png"></li>
+                  <li class="work-slider__item" data-title="Сайт №2" data-technology="html, css, javascript" data-link="http://loftschool.ru"><img class="work-slider__img" src="assets/img/userfiles/portfolio2.png"></li>
+                  <li class="work-slider__item" data-title="Сайт №3" data-technology="html, css, javascript" data-link="http://loftschool.ru"><img class="work-slider__img" src="assets/img/userfiles/portfolio3.png"></li>
+                </ul>
+              </div>
               <div class="work__next toggle column column_right"><a class="toggle__link toggle__link_next" href="#">
                   <svg class="toggle__icon">
                     <use xlink:href="assets/img/sprite/sprite.svg#portf_arrow_up"></use>
-                  </svg></a><img class="toggle__pic" src="assets/img/userfiles/portfolio.png"></div>
+                  </svg></a>
+                <ul class="work-slider__list work-slider__list_next">
+                  <li class="work-slider__item work-slider__item_active" data-title="Сайт №1" data-technology="html, css, javascript" data-link="http://loftschool.ru"><img class="work-slider__img" src="assets/img/userfiles/portfolio1.png"></li>
+                  <li class="work-slider__item" data-title="Сайт №2" data-technology="html, css" data-link="http://loftschool.ru"><img class="work-slider__img" src="assets/img/userfiles/portfolio2.png"></li>
+                  <li class="work-slider__item" data-title="Сайт №3" data-technology="javascript" data-link="http://loftschool.ru"><img class="work-slider__img" src="assets/img/userfiles/portfolio3.png"></li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
@@ -144,6 +156,7 @@
                 <div class="input-group">
                   <textarea class="form-input form-input_area" placeholder="Cообщение"></textarea>
                 </div>
+                <div class="input-error-msg"></div>
               </div>
               <div class="form__buttons">
                 <button class="form__btn" type="submit">Отправить</button>

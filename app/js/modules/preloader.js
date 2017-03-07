@@ -2,11 +2,17 @@ var Preloader = (function () {
   var loader = document.querySelector('.preloader'),
     wrapper = document.querySelector('.index-wrapper'),
     images = document.querySelectorAll('img'),
-    flipCard = document.querySelector('.flipper');
+    flipCard = document.querySelector('.flipper'),
+    procentField = document.querySelector('.preloader__percent'),
+    percent = 0,
+    percentStep = 100 / (images.length + 0.4);
 
   function _loadImage(img) {
     return new Promise(function (resolve, reject) {
       img.onload = function () {
+        percent = Math.ceil(percent + percentStep);
+        console.log(percent, percentStep);
+        procentField.innerHTML = percent + '%';
         resolve(img);
       };
       img.onerror = function () {
@@ -15,64 +21,46 @@ var Preloader = (function () {
     });
   }
 
-  function _showLoader (imgList) {
+  function _showLoader(imgList) {
     var promiseImg = imgList.map(_loadImage);
 
-    return promiseImg.reduce(function (prevPromise, currentPromise) {
-      return prevPromise
-        .then(function () {
-          return currentPromise;
-        })
-        .then(function (img) {
-          console.log(img.src);
-          return Promise.resolve();
-        })
-        .catch(function () {
-          console.log('что то пошло не так');
-          return Promise.resolve();
-        })
-
-    })
-  }
-
-  function _closeLoader () {
-    var imgArr = Array.prototype.slice.call(images);
-
-    _showLoader(imgArr)
-      .then(function()
-      {
+    Promise.all(promiseImg)
+      .then(function (value) {
         wrapper.style.display = 'block';
 
+        percent = 100;
+        procentField.innerHTML = percent + '%';
         setTimeout(function () {
           loader.style.opacity = '0';
-          loader.parentNode.removeChild(loader);
-        },1500)
+          // loader.parentNode.removeChild(loader);
+          loader.style.display = 'none';
+        }, 1500)
       })
       .then(function () {
         setTimeout(function () {
           flipCard.style.transform = 'rotate3d(1,0,0, 0deg)';
-        },1500)
+        }, 1500)
       })
-      .catch(function(err)
-      {
-        console.log(err);
-      });
-
-
   };
 
+function _closeLoader() {
+  var imgArr = Array.prototype.slice.call(images);
 
-  return {
-    init: _closeLoader
-  }
+  _showLoader(imgArr);
+};
 
-})();
 
-Preloader.init();
+return {
+  init: _closeLoader
+}
+
+})
+();
+
 
 /*
-  1 - загрузить сам прелоадер
-  2 - взять все картинки на странице
-  3 - по мере загрузки картинок менять проценты
-  4 - после загрузки всех картинок убрать прелоадер
+ 1 - загрузить сам прелоадер
+ 2 - взять все картинки на странице
+ 3 - по мере загрузки картинок менять проценты
+ 4 - после загрузки всех картинок убрать прелоадер
  */
