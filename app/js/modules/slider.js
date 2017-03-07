@@ -1,124 +1,114 @@
 var Slider = (function () {
-  var index = 0,
+  var items = $('.slider__item'),
+    activeItem,
+    index = 0,
+    ndx,
+    nextSlide,
     duration = 500;
 
   function _init() {
-    // var activeItem = items.eq(index);
-
-    console.log('смещаем');
+    activeItem = items.eq(index);
     _moveNext();
-    // сразу запустить функцию move
-
+    _movePrev();
   }
+
+  function _slideShow() {
+    var activeItem = items.filter('.slider__item_active'),
+      reqItem = items.eq(index);
+
+    _moveNext();
+    _movePrev();
+
+    activeItem.removeClass('slider__item_active');
+    reqItem.addClass('slider__item_active');
+  }
+
 
   function _moveNext() {
-    var items = $('.work-slider__item', '.work-slider__list_next');
-
-    if (index >= items.length) {
-      index = 0;
+    if (index == items.length - 1) {
+      ndx = 0;
     } else if (index < 0) {
-      index = items.length;
+      ndx = items.length - 1;
+    } else {
+      ndx = index + 1;
     }
 
-    var activeItem = items.eq(index),
-      currentItem = activeItem.next(),
-      reqItem = currentItem.next();
+    // console.log(nextSlide);
+  var currentItem = items.eq(ndx),
+    currentImg = currentItem.find('.work__pic').attr("src"),
+    nextImg = currentItem.find('.work__pic').attr("src"),
+    imgContainer = $('.btn-slider__img_current'),
+    nextContainer = $('.btn-slider__img_next');
 
-    if (reqItem === undefined) reqItem = items.first();
+    imgContainer.attr('src', currentImg);
+}
+
+function _movePrev() {
+  if (index == items.length) {
+    ndx = 0;
+  } else if (index < 0) {
+    ndx = items.length - 1;
+  } else {
+    ndx = index - 1;
+  }
+
+  var currentItem = items.eq(ndx),
+    currentImg = currentItem.find('.work__pic').attr("src"),
+    imgContainer = $('.work-slider__img_prev');
+
+  imgContainer.attr('src', currentImg);
+}
+
+// function _moveSlide(container, direction, ndx) {
+//   var items = $('.work-slider__item', container),
+//     activeItem = items.filter('.work-slider__item_active'),
+//     currentItem = items(ndx),
+//     reqItem,
+//     direction = direction === 'up' ? -100 : 100;
+//
+//   reqItem = items.eq(index);
+//
+//   activeItem.animate({
+//     'top': direction + '%'
+//   }, duration);
+//
+//   reqItem.animate({
+//     'top': 0
+//   }, duration, function () {
+//     activeItem.removeClass('work-slider__item_active').css('top', -direction + '%');
+//     currentItem.addClass('work-slider__item_active');
+//   })
+//
+// }
 
 
-    console.log(index);
-    console.log(activeItem);
-    console.log(currentItem);
-    console.log(reqItem);
+return {
+  init: _init,
+  move: function () {
 
-    currentItem.animate({
-      'top': 100 + '%'
-    }, duration);
+    $('.toggle__link').on('click', function (e) {
+      e.preventDefault();
 
-    reqItem.animate({
-      'top': 0
-    }, duration, function () {
-      activeItem.removeClass('work-slider__item_active').css('top', -100 + '%');
-      currentItem.addClass('work-slider__item_active');
+      if ($(this).hasClass('toggle__link_next')) {
+        index++;
+        nextSlide = ndx + 1;
+      } else if ($(this).hasClass('toggle__link_prev')) {
+        index--;
+        nextSlide = ndx - 1;
+      }
+
+      if (index >= items.length) {
+        index = 0;
+      } else if (index < 0) {
+        index = items.length - 1;
+      }
+
+      _slideShow();
+
     })
 
-
   }
+}
+})
+();
 
-  function _movePrev() {
-    var ndx = index - 1,
-      currentItem = items.eq(ndx),
-      reqItem = currentItem.prev();
-
-
-  }
-
-  function _moveSlide(container, direction, ndx) {
-    var items = $('.work-slider__item', container),
-      activeItem = items.filter('.work-slider__item_active'),
-      currentItem = items(ndx),
-      reqItem,
-      direction = direction === 'up' ? -100 : 100;
-
-    // var ndx = direction === 'up' ? index + 1 : index - 1;
-
-    // console.log(ndx);
-
-    // if (index >= items.length) {
-    //   index = 0;
-    // } else if (index < 0) {
-    //   index = items.length - 1;
-    // }
-
-    reqItem = items.eq(index);
-
-    activeItem.animate({
-      'top': direction + '%'
-    }, duration);
-
-    reqItem.animate({
-      'top': 0
-    }, duration, function () {
-      activeItem.removeClass('work-slider__item_active').css('top', -direction + '%');
-      currentItem.addClass('work-slider__item_active');
-    })
-
-  }
-
-  return {
-    init: _init,
-    move: function () {
-
-      $('.toggle__link').on('click', function (e) {
-        e.preventDefault();
-
-        if ($(this).hasClass('toggle__link_next')) {
-          index++;
-        } else if ($(this).hasClass('toggle__link_prev')) {
-          index--;
-        }
-
-
-        _moveNext();
-        // _moveSlide($('.work-slider__list_next'), 'up');
-        // _moveSlide($('.work-slider__list_prev'), 'down');
-
-      })
-
-    }
-    // next:
-  }
-})();
-
-
-/*
- 1- найти слайдер
- 2- разделить его на элементы
- 3- выделить отдельные элементы(текст, картинку)
- 4- при клике вперед
- 1- взять картинки из следующего и предыдущего эл-тов
- 2- подставить их в кнопки
- 3- текущую картинку подставить в основное окно
- 4- поменять текст
- */
