@@ -33,6 +33,9 @@
   background-color: $black;
   //background-image: url(../img/decor/);
   cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   &:after, &:before {
     content: '';
@@ -41,16 +44,16 @@
     height: 2px;
     background-color: #fff;
     position: absolute;
-    top: 50%;
-    left: 50%;
+    //top: 50%;
+    //left: 50%;
     //transform: translate(-50%, -50%);
-    transform-origin: center;
+    //transform-origin: top;
   }
   &:before {
-    transform: translate(-50%, -50%) rotate(45deg);
+    transform: rotate(45deg);
   }
   &:after {
-    transform: translate(-50%, -50%) rotate(-45deg);
+    transform: rotate(-45deg);
   }
 
 }
