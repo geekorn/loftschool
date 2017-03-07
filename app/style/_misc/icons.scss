@@ -93,6 +93,7 @@
   fill: #fff;
   transition: .2s;
   @include centered();
+  z-index: 10;
 }
 
 .scroll-link__icon {

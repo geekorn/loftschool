@@ -6,10 +6,6 @@
   @extend %clearfix;
   height: 100vh;
   min-height: 550px;
-
-  @include tablet {
-    height: auto;
-  }
 }
 .column {
   @extend %left;
