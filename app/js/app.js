@@ -51,39 +51,6 @@ window.onload = function () {
   }
 
 
-  //HEADER PARALAX & SKILLS
-  var bg = document.querySelector('.header__bg'),
-    skills = document.querySelectorAll('.skill'),
-    blogWrapper = document.querySelector('.blog-container');
-
-  // ВЫЗОВ ФУНКЦИЯ ПО СКРОЛЛУ СТРАНИЦЫ
-  window.onscroll = function () {
-
-    var wScroll = window.pageYOffset;
-
-    if (bg !== null) {
-      HeaderParallax.init(wScroll);
-    }
-
-    if (skills !== null) {
-      Skills.grow();
-    }
-
-    if (blogWrapper !== null) {
-      BlogMenu.init();
-      BlogMenu.initActive();
-    }
-
-  };
-
-  var sideMenu = document.querySelector('.sidemenu-btn');
-
-  if (sideMenu !== null) {
-    sideMenu.onclick = function () {
-      BlogMenu.toggle();
-    }
-  }
-
   var form = document.querySelector('form');
 
   if (form !== null) {
@@ -144,6 +111,43 @@ window.onload = function () {
       Slider.init();
       Slider.move();
     })();
+  }
+
+  //HEADER PARALAX & SKILLS
+  var bg = document.querySelector('.header__bg'),
+    skills = document.querySelectorAll('.skill'),
+    blogWrapper = document.querySelector('.blog-container');
+
+  // ВЫЗОВ ФУНКЦИЯ ПО СКРОЛЛУ СТРАНИЦЫ
+  window.onscroll = function () {
+
+    var wScroll = window.pageYOffset;
+
+    if (bg !== null) {
+      HeaderParallax.init(wScroll);
+    }
+
+    if (skills !== null) {
+      Skills.grow();
+    }
+
+    if (blogWrapper !== null) {
+      BlogMenu.init();
+      BlogMenu.initActive();
+    }
+
+  };
+
+  var sideMenu = document.querySelector('.sidemenu-btn');
+
+  if (sideMenu !== null) {
+    sideMenu.onclick = function () {
+      BlogMenu.toggle();
+    }
+  }
+
+  window.onresize = function () {
+    BlogMenu.init();
   }
 
 

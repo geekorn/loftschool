@@ -5,7 +5,7 @@ var BlogMenu = (function () {
     var nav = document.querySelector('.blog-menu'),
       navCoords = sidebar.getBoundingClientRect().top;
 
-    if (window.innerWidth >= 768) {
+    if (window.innerWidth >= 780) {
       if (navCoords <= -50) {
         nav.style.position = 'fixed';
         nav.style.top = '20px';
@@ -14,7 +14,12 @@ var BlogMenu = (function () {
         nav.style.position = 'static';
         nav.style.width = 'auto';
       }
+    } else {
+      nav.style.position = 'absolute';
+      nav.style.top = '';
+      nav.style.width = 'auto';
     }
+
   }
 
   function _initActive () {
