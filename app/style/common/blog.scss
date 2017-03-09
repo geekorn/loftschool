@@ -10,10 +10,6 @@
   @include laptop {
     padding: 50px 4%;
   }
-
-  &_shift_right {
-    transform: translateX(250px);
-  }
 }
 
 .articles {
@@ -21,6 +17,7 @@
   @extend %right;
 
   @include tablet {
+    float: none;
     width: 100%;
   }
 }

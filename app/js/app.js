@@ -101,7 +101,7 @@ window.onload = function () {
 
     if (closeError !== null) {
       closeError.onclick = function() {
-        closeError.parentNode.style.display = 'none';
+        closeError.parentNode.parentNode.style.display = 'none';
       };
     }
 

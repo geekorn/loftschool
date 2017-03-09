@@ -6,13 +6,21 @@
   text-align: center;
 }
 
-.input-error-captcha {
-  display: none;
+.welcome__error {
+  background-color: rgba($black, .7);
+  z-index: 100;
   position: absolute;
   top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 80%;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+.input-error-captcha {
+  display: block;
+  position: relative;
   border: 1px solid #000;
   border-radius: 10px;
   background-color: #cecece;
@@ -20,6 +28,7 @@
 
 .input-error-captcha__text {
   padding: 40px;
+  display: inline-block;
 }
 .input-error-captcha__close {
   position: absolute;

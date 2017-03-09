@@ -6,6 +6,10 @@ var Slider = (function () {
     nextSlide,
     duration = 500;
 
+  function createImgList () {
+
+  }
+
   function _init() {
     activeItem = items.eq(index);
     _moveNext();

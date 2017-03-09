@@ -4,13 +4,18 @@
 
   @include tablet {
     float: none;
-    position: absolute;
+    position: fixed;
     top: 0;
-    right: 100%;
+    left: 0;
     height: 100vh;
     width: 250px;
     z-index: 100;
-    background-color: $green-light;
+    transform: translateX(-100%);
+    transition: 0.5s;
+
+    &_open {
+      transform: translateX(0);
+    }
   }
   @include phone {
     &:after {
@@ -21,6 +26,16 @@
 
 .blog-menu {
   text-align: right;
+
+  @include tablet {
+    @include centered(y);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: $green-light;
+    z-index: 10;
+  }
 }
 .blog-menu__item {
   margin-bottom: 10px;
@@ -67,6 +82,7 @@
   box-shadow: 0 0 3px 3px rgba(#000, .2);
   border-radius: 50%;
   position: absolute;
+  @include centered(y);
   right: -15px;
   cursor: pointer;
 

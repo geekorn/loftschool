@@ -1,6 +1,7 @@
 var Validation = (function () {
   var errorField = document.querySelector('.input-error-msg'),
-    captchaError = document.querySelector('.input-error-captcha');
+    captchaError = document.querySelector('.welcome__error'),
+    formContainer = document.querySelector('.form__container');
 
   var _init = function (form) {
     var elems = form.elements;
@@ -27,7 +28,7 @@ var Validation = (function () {
           return true;
         }
         if (!elem.checked) {
-          captchaError.style.display = 'block';
+          captchaError.style.display = 'flex';
         }
       }
     }
@@ -42,9 +43,10 @@ var Validation = (function () {
 
     elem.parentNode.classList.add('input-group_error');
     errorField.style.display = 'block';
-    errorField.innerText = 'вы не ввели ' + text;
+    errorField.innerText = 'Вы не ввели ' + text;
+
+    // if (position > formContainer.offsetHeight)
     errorField.style.top = position + 'px';
-    console.log('вы не ввели ' + text);
   }
 
   function _clearError(elem) {
