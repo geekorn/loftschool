@@ -106,13 +106,37 @@ window.onload = function () {
   var slider = document.querySelector('.work__slider');
 
   if (slider !== null) {
-    (function () {
-      // Slider.init();
-      Slider.init();
-      Slider.move();
-    })();
+    $.getJSON('../data/works.json', function (data) {
+        // console.log(data)
+        $('.work-slider__list_prev').append(createSlides(data));
+        $('.work-slider__list_next').append(createSlides(data));
+
+        Slider.init($('.work-slider__list_next').children());
+        Slider.move();
+    });
   }
 
+        function createSlides(items, active) {
+        var list = document.createDocumentFragment();
+
+        items.forEach(function (item, i) {
+            var span = document.createElement('LI');
+            var img = new Image();
+
+            (i === active) && span.classList.add('work-slider__item_current');
+            span.classList.add('work-slider__item');
+            span.dataset.title = item.name;
+            span.dataset.technology = item.technology;
+            span.dataset.link = item.link;
+            img.src = item.img;
+            img.classList.add('work-slider__img');
+
+            span.appendChild(img);
+            list.appendChild(span);
+        });
+
+        return list;
+    }
   //HEADER PARALAX & SKILLS
   var bg = document.querySelector('.header__bg'),
     skills = document.querySelectorAll('.skill'),
