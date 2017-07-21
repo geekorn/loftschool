@@ -1,0 +1,37 @@
+[
+  {
+    "name": "goldenAge",
+    "technology": [
+      "html",
+      "css",
+      "javascript",
+      "jquery"
+    ],
+    "link": "data/golden",
+    "img": "assets/img/userfiles/portfolio1.png"
+  },
+  {
+    "name": "vk",
+    "technology": [
+      "html",
+      "css",
+      "javascript",
+      "es6",
+      "webpack"
+    ],
+    "link": "data/vk",
+    "img": "assets/img/userfiles/portfolio2.png"
+  },
+  {
+    "name": "maps",
+    "technology": [
+      "html",
+      "css",
+      "javascript",
+      "es6",
+      "webpack"
+    ],
+    "link": "data/maps",
+    "img": "assets/img/userfiles/portfolio3.png"
+  }
+]
